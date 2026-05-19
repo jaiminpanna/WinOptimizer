@@ -52,7 +52,7 @@
 ### Prerequisites
 - [Visual Studio 2022](https://visualstudio.microsoft.com/) (Community edition is free)
   - Workload: **.NET desktop development**
-- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/8)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10)
 - Windows 10 or Windows 11
 
 ### Build & Run
@@ -74,7 +74,7 @@ Or open `WinOptimizer.sln` in Visual Studio and press **F5**.
 dotnet publish -c Release -r win-x64 --self-contained false /p:PublishSingleFile=true
 ```
 
-Output: `bin\Release\net8.0-windows\win-x64\publish\WinOptimizer.exe`
+Output: `bin\Release\net10.0-windows\win-x64\publish\WinOptimizer.exe`
 
 ---
 
@@ -82,13 +82,16 @@ Output: `bin\Release\net8.0-windows\win-x64\publish\WinOptimizer.exe`
 
 ```
 WinOptimizer/
-├── WinOptimizer.csproj       # Project config — targets net8.0-windows
-├── app.manifest              # Requests Administrator elevation at launch
-├── Program.cs                # Entry point
-├── Form1.cs                  # Main UI with tabbed layout and event handlers
-├── Form1.Designer.cs         # Minimal designer file (UI built in code)
-├── SystemCleaner.cs          # All safe cleanup operations
-└── DriveOptimizer.cs         # Drive detection (SSD/HDD) and optimization
+├── WinOptimizer.csproj           # Project config — targets net10.0-windows
+├── app.manifest                  # Requests Administrator elevation at launch
+├── Program.cs                    # Entry point
+├── Form1.cs                      # Main UI with tabbed layout and event handlers
+├── Form1.Designer.cs             # Minimal designer file (UI built in code)
+└── src/
+    ├── SystemCleaner.cs          # All safe cleanup operations
+    ├── DriveOptimizer.cs         # Drive detection (SSD/HDD) and optimization logic
+    ├── DriveInfo.cs              # Class — holds drive metadata (letter, label, size, etc.)
+    └── DriveType.cs              # Enum — defines drive types (SSD, HDD)
 ```
 
 ---
@@ -134,7 +137,7 @@ WinOptimizer/
 
 | Dependency | Version | Purpose |
 |-----------|---------|---------|
-| .NET 10 WinForms | 8.0 | UI framework |
+| .NET 10 WinForms | 10.0 | UI framework |
 | Windows Shell32 | Built-in | Recycle Bin API (`SHEmptyRecycleBin`) |
 | PowerShell | Built-in | Drive type detection + `Optimize-Volume` |
 
