@@ -1,4 +1,4 @@
-﻿namespace WinOptimizer
+﻿namespace WinOptimizer.src
 {
 
     public static class DriveOptimizer

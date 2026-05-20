@@ -1,3 +1,5 @@
+using WinOptimizer.src;
+
 namespace WinOptimizer
 {
     public partial class Form1 : Form

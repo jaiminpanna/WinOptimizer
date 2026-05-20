@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace WinOptimizer
+namespace WinOptimizer.src
 {
     public static class SystemCleaner
     {

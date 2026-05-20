@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WinOptimizer
+namespace WinOptimizer.src
 {
     public enum DriveType
     {
