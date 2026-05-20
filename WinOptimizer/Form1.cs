@@ -1,4 +1,6 @@
 using WinOptimizer.src;
+using DriveInfo = WinOptimizer.src.DriveInfo;
+using DriveType = WinOptimizer.src.DriveType;
 
 namespace WinOptimizer
 {
